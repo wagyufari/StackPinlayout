@@ -44,6 +44,7 @@ class ViewControllerView:UIView{
     
     func performLayout() {
         scroll.pin.all()
+        stack.axis = .horizontal
         for i in 0...5 {
             stack.addArrangedSubview(UIView().apply{
                 $0.pin.height(200)
@@ -59,16 +60,18 @@ class ViewControllerView:UIView{
     }
     
     func didPerformLayout() {
-        scroll.contentSize = CGSize(width: scroll.bounds.width, height: stack.frame.maxY)
+        scroll.contentSize = CGSize(width: stack.frame.maxY, height: scroll.bounds.height)
     }
     override func sizeThatFits(_ size: CGSize) -> CGSize {
         autoSizeThatFits(size, layoutClosure: performLayout)
+        
     }
 }
 
 class UIStackPinView: UIView{
     
     var subViews:[View] = []
+    var axis:NSLayoutConstraint.Axis = .vertical
     
     func addArrangedSubview(_ view:View)  {
         subViews.append(view)
@@ -84,7 +87,11 @@ class UIStackPinView: UIView{
         if subViews.count > 1 {
             for (index, view) in subViews.enumerated() {
                 if index != 0 {
-                    view.pin.below(of: subViews[index-1])
+                    if axis == .vertical {
+                        view.pin.below(of: subViews[index-1])
+                    } else{
+                        view.pin.right(of: subViews[index-1])
+                    }
                 }
             }
         }

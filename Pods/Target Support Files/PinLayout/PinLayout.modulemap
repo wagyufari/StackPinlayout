@@ -1,4 +1,4 @@
-framework module PinLayout {
+module PinLayout {
   umbrella header "PinLayout-umbrella.h"
 
   export *

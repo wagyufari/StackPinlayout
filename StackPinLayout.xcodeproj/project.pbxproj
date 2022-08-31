@@ -3,12 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		075BE652E62EE22C78F1FFA6 /* Pods_StackPinLayoutTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD387AB7CCE3A7916C2D2457 /* Pods_StackPinLayoutTests.framework */; };
-		18482D2B39AC42124F2E9B22 /* Pods_StackPinLayout_StackPinLayoutUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 747872530E9F6B93DBD2492F /* Pods_StackPinLayout_StackPinLayoutUITests.framework */; };
+		3F06D485286D7E4B00E71DDF /* PinStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F06D484286D7E4B00E71DDF /* PinStackView.swift */; };
 		3F13217426CD4B400099FF7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F13217326CD4B400099FF7E /* AppDelegate.swift */; };
 		3F13217626CD4B400099FF7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F13217526CD4B400099FF7E /* SceneDelegate.swift */; };
 		3F13217826CD4B400099FF7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F13217726CD4B400099FF7E /* ViewController.swift */; };
@@ -18,7 +17,24 @@
 		3F13218B26CD4B420099FF7E /* StackPinLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F13218A26CD4B420099FF7E /* StackPinLayoutTests.swift */; };
 		3F13219626CD4B420099FF7E /* StackPinLayoutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F13219526CD4B420099FF7E /* StackPinLayoutUITests.swift */; };
 		3F1321A426CD4BEE0099FF7E /* HasApply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1321A326CD4BEE0099FF7E /* HasApply.swift */; };
-		FEFB277994DB6C8AAB1139A5 /* Pods_StackPinLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E06FD362957AC59BA77AECCB /* Pods_StackPinLayout.framework */; };
+		3F858336286EACA20033779C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F858335286EACA20033779C /* UIView+Extension.swift */; };
+		3F93BA3F28A9BE250002F19B /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 3F93BA3E28A9BE250002F19B /* Charts */; };
+		3F93BA4528A9C4410002F19B /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F93BA4428A9C4410002F19B /* UIColor+Extension.swift */; };
+		3F93BA4728A9C9610002F19B /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F93BA4628A9C9610002F19B /* Double+Extension.swift */; };
+		3FB3DDF028A483F800BE3DA6 /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FB3DDE628A483F800BE3DA6 /* Lato-LightItalic.ttf */; };
+		3FB3DDF128A483F800BE3DA6 /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FB3DDE728A483F800BE3DA6 /* Lato-Thin.ttf */; };
+		3FB3DDF228A483F800BE3DA6 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FB3DDE828A483F800BE3DA6 /* Lato-Regular.ttf */; };
+		3FB3DDF328A483F800BE3DA6 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FB3DDE928A483F800BE3DA6 /* Lato-BlackItalic.ttf */; };
+		3FB3DDF428A483F800BE3DA6 /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FB3DDEA28A483F800BE3DA6 /* Lato-BoldItalic.ttf */; };
+		3FB3DDF528A483F800BE3DA6 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FB3DDEB28A483F800BE3DA6 /* Lato-Bold.ttf */; };
+		3FB3DDF628A483F800BE3DA6 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FB3DDEC28A483F800BE3DA6 /* Lato-Italic.ttf */; };
+		3FB3DDF728A483F800BE3DA6 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FB3DDED28A483F800BE3DA6 /* Lato-Black.ttf */; };
+		3FB3DDF828A483F800BE3DA6 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FB3DDEE28A483F800BE3DA6 /* Lato-Light.ttf */; };
+		3FB3DDF928A483F800BE3DA6 /* Lato-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FB3DDEF28A483F800BE3DA6 /* Lato-ThinItalic.ttf */; };
+		3FFA3B4D28AA1C77002F1415 /* UIStackPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFA3B4C28AA1C77002F1415 /* UIStackPinView.swift */; };
+		3FFA3B4F28AAA57D002F1415 /* RectMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFA3B4E28AAA57C002F1415 /* RectMarker.swift */; };
+		3FFA3B5128AAA800002F1415 /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFA3B5028AAA800002F1415 /* BalloonMarker.swift */; };
+		5FD4A372AC75E8590CD3BFF7 /* libPods-StackPinLayout.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D107AFA98F23AAAF0ACAC8 /* libPods-StackPinLayout.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,9 +55,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1B5FC469AAE1D83C30B835FE /* Pods-StackPinLayoutTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackPinLayoutTests.release.xcconfig"; path = "Target Support Files/Pods-StackPinLayoutTests/Pods-StackPinLayoutTests.release.xcconfig"; sourceTree = "<group>"; };
+		04D107AFA98F23AAAF0ACAC8 /* libPods-StackPinLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StackPinLayout.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F181311056960185001B2C8 /* Pods-StackPinLayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackPinLayout.debug.xcconfig"; path = "Target Support Files/Pods-StackPinLayout/Pods-StackPinLayout.debug.xcconfig"; sourceTree = "<group>"; };
-		32C80CFBC245F60F6B0E91A3 /* Pods-StackPinLayout-StackPinLayoutUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackPinLayout-StackPinLayoutUITests.release.xcconfig"; path = "Target Support Files/Pods-StackPinLayout-StackPinLayoutUITests/Pods-StackPinLayout-StackPinLayoutUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3F06D484286D7E4B00E71DDF /* PinStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinStackView.swift; sourceTree = "<group>"; };
 		3F13217026CD4B400099FF7E /* StackPinLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackPinLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F13217326CD4B400099FF7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F13217526CD4B400099FF7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,12 +73,23 @@
 		3F13219526CD4B420099FF7E /* StackPinLayoutUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackPinLayoutUITests.swift; sourceTree = "<group>"; };
 		3F13219726CD4B420099FF7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F1321A326CD4BEE0099FF7E /* HasApply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasApply.swift; sourceTree = "<group>"; };
+		3F858335286EACA20033779C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		3F93BA4428A9C4410002F19B /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		3F93BA4628A9C9610002F19B /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		3FB3DDE628A483F800BE3DA6 /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LightItalic.ttf"; sourceTree = "<group>"; };
+		3FB3DDE728A483F800BE3DA6 /* Lato-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Thin.ttf"; sourceTree = "<group>"; };
+		3FB3DDE828A483F800BE3DA6 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		3FB3DDE928A483F800BE3DA6 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
+		3FB3DDEA28A483F800BE3DA6 /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
+		3FB3DDEB28A483F800BE3DA6 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		3FB3DDEC28A483F800BE3DA6 /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
+		3FB3DDED28A483F800BE3DA6 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		3FB3DDEE28A483F800BE3DA6 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		3FB3DDEF28A483F800BE3DA6 /* Lato-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-ThinItalic.ttf"; sourceTree = "<group>"; };
+		3FFA3B4C28AA1C77002F1415 /* UIStackPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackPinView.swift; sourceTree = "<group>"; };
+		3FFA3B4E28AAA57C002F1415 /* RectMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectMarker.swift; sourceTree = "<group>"; };
+		3FFA3B5028AAA800002F1415 /* BalloonMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalloonMarker.swift; sourceTree = "<group>"; };
 		49D55F4384238CC02F3724C4 /* Pods-StackPinLayout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackPinLayout.release.xcconfig"; path = "Target Support Files/Pods-StackPinLayout/Pods-StackPinLayout.release.xcconfig"; sourceTree = "<group>"; };
-		747872530E9F6B93DBD2492F /* Pods_StackPinLayout_StackPinLayoutUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StackPinLayout_StackPinLayoutUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		809B441A2E0EF4F573843CC5 /* Pods-StackPinLayoutTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackPinLayoutTests.debug.xcconfig"; path = "Target Support Files/Pods-StackPinLayoutTests/Pods-StackPinLayoutTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D7853EB49DDFF7D74240A479 /* Pods-StackPinLayout-StackPinLayoutUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackPinLayout-StackPinLayoutUITests.debug.xcconfig"; path = "Target Support Files/Pods-StackPinLayout-StackPinLayoutUITests/Pods-StackPinLayout-StackPinLayoutUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		DD387AB7CCE3A7916C2D2457 /* Pods_StackPinLayoutTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StackPinLayoutTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E06FD362957AC59BA77AECCB /* Pods_StackPinLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StackPinLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +97,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEFB277994DB6C8AAB1139A5 /* Pods_StackPinLayout.framework in Frameworks */,
+				5FD4A372AC75E8590CD3BFF7 /* libPods-StackPinLayout.a in Frameworks */,
+				3F93BA3F28A9BE250002F19B /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +106,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				075BE652E62EE22C78F1FFA6 /* Pods_StackPinLayoutTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +113,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18482D2B39AC42124F2E9B22 /* Pods_StackPinLayout_StackPinLayoutUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,10 +124,6 @@
 			children = (
 				1F181311056960185001B2C8 /* Pods-StackPinLayout.debug.xcconfig */,
 				49D55F4384238CC02F3724C4 /* Pods-StackPinLayout.release.xcconfig */,
-				D7853EB49DDFF7D74240A479 /* Pods-StackPinLayout-StackPinLayoutUITests.debug.xcconfig */,
-				32C80CFBC245F60F6B0E91A3 /* Pods-StackPinLayout-StackPinLayoutUITests.release.xcconfig */,
-				809B441A2E0EF4F573843CC5 /* Pods-StackPinLayoutTests.debug.xcconfig */,
-				1B5FC469AAE1D83C30B835FE /* Pods-StackPinLayoutTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -131,6 +153,7 @@
 		3F13217226CD4B400099FF7E /* StackPinLayout */ = {
 			isa = PBXGroup;
 			children = (
+				3FB3DDE328A4814600BE3DA6 /* Fonts */,
 				3F13217326CD4B400099FF7E /* AppDelegate.swift */,
 				3F13217526CD4B400099FF7E /* SceneDelegate.swift */,
 				3F13217726CD4B400099FF7E /* ViewController.swift */,
@@ -139,6 +162,9 @@
 				3F13217E26CD4B420099FF7E /* LaunchScreen.storyboard */,
 				3F13218126CD4B420099FF7E /* Info.plist */,
 				3F1321A326CD4BEE0099FF7E /* HasApply.swift */,
+				3F06D484286D7E4B00E71DDF /* PinStackView.swift */,
+				3F858335286EACA20033779C /* UIView+Extension.swift */,
+				3F93BA4328A9C4410002F19B /* Extensions */,
 			);
 			path = StackPinLayout;
 			sourceTree = "<group>";
@@ -161,12 +187,39 @@
 			path = StackPinLayoutUITests;
 			sourceTree = "<group>";
 		};
+		3F93BA4328A9C4410002F19B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3FFA3B4E28AAA57C002F1415 /* RectMarker.swift */,
+				3F93BA4428A9C4410002F19B /* UIColor+Extension.swift */,
+				3F93BA4628A9C9610002F19B /* Double+Extension.swift */,
+				3FFA3B4C28AA1C77002F1415 /* UIStackPinView.swift */,
+				3FFA3B5028AAA800002F1415 /* BalloonMarker.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3FB3DDE328A4814600BE3DA6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3FB3DDED28A483F800BE3DA6 /* Lato-Black.ttf */,
+				3FB3DDE928A483F800BE3DA6 /* Lato-BlackItalic.ttf */,
+				3FB3DDEB28A483F800BE3DA6 /* Lato-Bold.ttf */,
+				3FB3DDEA28A483F800BE3DA6 /* Lato-BoldItalic.ttf */,
+				3FB3DDEC28A483F800BE3DA6 /* Lato-Italic.ttf */,
+				3FB3DDEE28A483F800BE3DA6 /* Lato-Light.ttf */,
+				3FB3DDE628A483F800BE3DA6 /* Lato-LightItalic.ttf */,
+				3FB3DDE828A483F800BE3DA6 /* Lato-Regular.ttf */,
+				3FB3DDE728A483F800BE3DA6 /* Lato-Thin.ttf */,
+				3FB3DDEF28A483F800BE3DA6 /* Lato-ThinItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		EF98B8DEEBCD3CB02313521D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E06FD362957AC59BA77AECCB /* Pods_StackPinLayout.framework */,
-				747872530E9F6B93DBD2492F /* Pods_StackPinLayout_StackPinLayoutUITests.framework */,
-				DD387AB7CCE3A7916C2D2457 /* Pods_StackPinLayoutTests.framework */,
+				04D107AFA98F23AAAF0ACAC8 /* libPods-StackPinLayout.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -182,13 +235,15 @@
 				3F13216C26CD4B400099FF7E /* Sources */,
 				3F13216D26CD4B400099FF7E /* Frameworks */,
 				3F13216E26CD4B400099FF7E /* Resources */,
-				C09ED515F5F4252185A8EF5D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = StackPinLayout;
+			packageProductDependencies = (
+				3F93BA3E28A9BE250002F19B /* Charts */,
+			);
 			productName = StackPinLayout;
 			productReference = 3F13217026CD4B400099FF7E /* StackPinLayout.app */;
 			productType = "com.apple.product-type.application";
@@ -197,7 +252,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F13219D26CD4B420099FF7E /* Build configuration list for PBXNativeTarget "StackPinLayoutTests" */;
 			buildPhases = (
-				F248FB86B121923F105DED4F /* [CP] Check Pods Manifest.lock */,
 				3F13218226CD4B420099FF7E /* Sources */,
 				3F13218326CD4B420099FF7E /* Frameworks */,
 				3F13218426CD4B420099FF7E /* Resources */,
@@ -216,11 +270,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F1321A026CD4B420099FF7E /* Build configuration list for PBXNativeTarget "StackPinLayoutUITests" */;
 			buildPhases = (
-				B9B2698EF3330619ED3A631D /* [CP] Check Pods Manifest.lock */,
 				3F13218D26CD4B420099FF7E /* Sources */,
 				3F13218E26CD4B420099FF7E /* Frameworks */,
 				3F13218F26CD4B420099FF7E /* Resources */,
-				F19BCEEEE8312568E87D3187 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -263,6 +315,9 @@
 				Base,
 			);
 			mainGroup = 3F13216726CD4B3F0099FF7E;
+			packageReferences = (
+				3F93BA3D28A9BE250002F19B /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = 3F13217126CD4B400099FF7E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -279,9 +334,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FB3DDF628A483F800BE3DA6 /* Lato-Italic.ttf in Resources */,
 				3F13218026CD4B420099FF7E /* LaunchScreen.storyboard in Resources */,
+				3FB3DDF228A483F800BE3DA6 /* Lato-Regular.ttf in Resources */,
+				3FB3DDF828A483F800BE3DA6 /* Lato-Light.ttf in Resources */,
+				3FB3DDF328A483F800BE3DA6 /* Lato-BlackItalic.ttf in Resources */,
+				3FB3DDF428A483F800BE3DA6 /* Lato-BoldItalic.ttf in Resources */,
 				3F13217D26CD4B420099FF7E /* Assets.xcassets in Resources */,
+				3FB3DDF728A483F800BE3DA6 /* Lato-Black.ttf in Resources */,
+				3FB3DDF128A483F800BE3DA6 /* Lato-Thin.ttf in Resources */,
 				3F13217B26CD4B400099FF7E /* Main.storyboard in Resources */,
+				3FB3DDF528A483F800BE3DA6 /* Lato-Bold.ttf in Resources */,
+				3FB3DDF928A483F800BE3DA6 /* Lato-ThinItalic.ttf in Resources */,
+				3FB3DDF028A483F800BE3DA6 /* Lato-LightItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,45 +367,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B9B2698EF3330619ED3A631D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-StackPinLayout-StackPinLayoutUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C09ED515F5F4252185A8EF5D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-StackPinLayout/Pods-StackPinLayout-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-StackPinLayout/Pods-StackPinLayout-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StackPinLayout/Pods-StackPinLayout-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		E86F5B65B0DE04B6077DFF87 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -363,45 +389,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F19BCEEEE8312568E87D3187 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-StackPinLayout-StackPinLayoutUITests/Pods-StackPinLayout-StackPinLayoutUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-StackPinLayout-StackPinLayoutUITests/Pods-StackPinLayout-StackPinLayoutUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StackPinLayout-StackPinLayoutUITests/Pods-StackPinLayout-StackPinLayoutUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F248FB86B121923F105DED4F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-StackPinLayoutTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -409,10 +396,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F93BA4528A9C4410002F19B /* UIColor+Extension.swift in Sources */,
+				3F858336286EACA20033779C /* UIView+Extension.swift in Sources */,
 				3F13217826CD4B400099FF7E /* ViewController.swift in Sources */,
+				3F06D485286D7E4B00E71DDF /* PinStackView.swift in Sources */,
+				3FFA3B5128AAA800002F1415 /* BalloonMarker.swift in Sources */,
+				3F93BA4728A9C9610002F19B /* Double+Extension.swift in Sources */,
 				3F13217426CD4B400099FF7E /* AppDelegate.swift in Sources */,
 				3F13217626CD4B400099FF7E /* SceneDelegate.swift in Sources */,
+				3FFA3B4D28AA1C77002F1415 /* UIStackPinView.swift in Sources */,
 				3F1321A426CD4BEE0099FF7E /* HasApply.swift in Sources */,
+				3FFA3B4F28AAA57D002F1415 /* RectMarker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,7 +591,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mayburger.StackPinLayout;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wagyufari.stack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -618,7 +612,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mayburger.StackPinLayout;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wagyufari.stack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -627,7 +621,6 @@
 		};
 		3F13219E26CD4B420099FF7E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 809B441A2E0EF4F573843CC5 /* Pods-StackPinLayoutTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -650,7 +643,6 @@
 		};
 		3F13219F26CD4B420099FF7E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B5FC469AAE1D83C30B835FE /* Pods-StackPinLayoutTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -673,7 +665,6 @@
 		};
 		3F1321A126CD4B420099FF7E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D7853EB49DDFF7D74240A479 /* Pods-StackPinLayout-StackPinLayoutUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -694,7 +685,6 @@
 		};
 		3F1321A226CD4B420099FF7E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 32C80CFBC245F60F6B0E91A3 /* Pods-StackPinLayout-StackPinLayoutUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -753,6 +743,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3F93BA3D28A9BE250002F19B /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3F93BA3E28A9BE250002F19B /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3F93BA3D28A9BE250002F19B /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3F13216826CD4B3F0099FF7E /* Project object */;
 }

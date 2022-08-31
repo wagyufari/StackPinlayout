@@ -1,4 +1,4 @@
-framework module Pods_StackPinLayout {
+module Pods_StackPinLayout {
   umbrella header "Pods-StackPinLayout-umbrella.h"
 
   export *

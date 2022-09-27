@@ -18,6 +18,7 @@
 		3F13218B26CD4B420099FF7E /* StackPinLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F13218A26CD4B420099FF7E /* StackPinLayoutTests.swift */; };
 		3F13219626CD4B420099FF7E /* StackPinLayoutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F13219526CD4B420099FF7E /* StackPinLayoutUITests.swift */; };
 		3F1321A426CD4BEE0099FF7E /* HasApply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1321A326CD4BEE0099FF7E /* HasApply.swift */; };
+		3F573B5928E2E31C0065C553 /* UIStackPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F573B5828E2E31C0065C553 /* UIStackPinView.swift */; };
 		FEFB277994DB6C8AAB1139A5 /* Pods_StackPinLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E06FD362957AC59BA77AECCB /* Pods_StackPinLayout.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		3F13219526CD4B420099FF7E /* StackPinLayoutUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackPinLayoutUITests.swift; sourceTree = "<group>"; };
 		3F13219726CD4B420099FF7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F1321A326CD4BEE0099FF7E /* HasApply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasApply.swift; sourceTree = "<group>"; };
+		3F573B5828E2E31C0065C553 /* UIStackPinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackPinView.swift; sourceTree = "<group>"; };
 		49D55F4384238CC02F3724C4 /* Pods-StackPinLayout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackPinLayout.release.xcconfig"; path = "Target Support Files/Pods-StackPinLayout/Pods-StackPinLayout.release.xcconfig"; sourceTree = "<group>"; };
 		747872530E9F6B93DBD2492F /* Pods_StackPinLayout_StackPinLayoutUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StackPinLayout_StackPinLayoutUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		809B441A2E0EF4F573843CC5 /* Pods-StackPinLayoutTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackPinLayoutTests.debug.xcconfig"; path = "Target Support Files/Pods-StackPinLayoutTests/Pods-StackPinLayoutTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				3F13217326CD4B400099FF7E /* AppDelegate.swift */,
 				3F13217526CD4B400099FF7E /* SceneDelegate.swift */,
 				3F13217726CD4B400099FF7E /* ViewController.swift */,
+				3F573B5828E2E31C0065C553 /* UIStackPinView.swift */,
 				3F13217926CD4B400099FF7E /* Main.storyboard */,
 				3F13217C26CD4B420099FF7E /* Assets.xcassets */,
 				3F13217E26CD4B420099FF7E /* LaunchScreen.storyboard */,
@@ -409,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F573B5928E2E31C0065C553 /* UIStackPinView.swift in Sources */,
 				3F13217826CD4B400099FF7E /* ViewController.swift in Sources */,
 				3F13217426CD4B400099FF7E /* AppDelegate.swift in Sources */,
 				3F13217626CD4B400099FF7E /* SceneDelegate.swift in Sources */,

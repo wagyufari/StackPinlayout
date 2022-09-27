@@ -29,6 +29,7 @@ class ViewController: UIViewController{
                 $0.backgroundColor = .green
             })
         }
+        parentView.scroll.backgroundColor = .red
         
         parentView.setNeedsLayout()
         parentView.layoutIfNeeded()
@@ -64,11 +65,10 @@ class ViewControllerView:UIView{
     }
     
     func performLayout() {
+        scroll.pin.top().horizontally()
         
         if isSetHeightWithMaxHeight {
-            scroll.pin.top().horizontally().height(320)
-        } else{
-            scroll.pin.all()
+            scroll.pin.height(320)
         }
         
         stack.axis = .vertical
@@ -76,6 +76,7 @@ class ViewControllerView:UIView{
         stack.pin.top().horizontally().wrapContent(.vertically)
         
         if !isSetHeightWithMaxHeight {
+            scroll.pin.wrapContent(.vertically)
             if stack.frame.maxY > 320 {
                 isSetHeightWithMaxHeight = true
                 setNeedsLayout()

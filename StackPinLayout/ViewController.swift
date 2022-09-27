@@ -10,9 +10,28 @@ import PinLayout
 
 class ViewController: UIViewController{
     
+    let parentView = ViewControllerView()
+    
     override func viewDidLoad() {
-        view = ViewControllerView()
+        view = parentView
         view.backgroundColor = .white
+        
+        parentView.stack.isManualWrap = true
+        for i in 0...5 {
+            parentView.stack.addArrangedSubview(UIView().apply{
+                $0.pin.height(200)
+                $0.pin.width(200)
+                $0.backgroundColor = .blue
+            })
+            parentView.stack.addArrangedSubview(UIView().apply{
+                $0.pin.height(200)
+                $0.pin.width(200)
+                $0.backgroundColor = .green
+            })
+        }
+        
+        parentView.setNeedsLayout()
+        parentView.layoutIfNeeded()
     }
 }
 
@@ -30,6 +49,8 @@ class ViewControllerView:UIView{
        return UIScrollView()
     }()
     
+    var isSetHeightWithMaxHeight = false
+    
     init() {
         super.init(frame: .zero)
         addSubview(scroll)
@@ -43,57 +64,31 @@ class ViewControllerView:UIView{
     }
     
     func performLayout() {
-        scroll.pin.all()
-        stack.axis = .horizontal
-        for i in 0...5 {
-            stack.addArrangedSubview(UIView().apply{
-                $0.pin.height(200)
-                $0.pin.width(200)
-                $0.backgroundColor = .blue
-            })
-            stack.addArrangedSubview(UIView().apply{
-                $0.pin.height(200)
-                $0.pin.width(200)
-                $0.backgroundColor = .green
-            })
+        
+        if isSetHeightWithMaxHeight {
+            scroll.pin.top().horizontally().height(320)
+        } else{
+            scroll.pin.all()
+        }
+        
+        stack.axis = .vertical
+        
+        stack.pin.top().horizontally().wrapContent(.vertically)
+        
+        if !isSetHeightWithMaxHeight {
+            if stack.frame.maxY > 320 {
+                isSetHeightWithMaxHeight = true
+                setNeedsLayout()
+                layoutIfNeeded()
+            }
         }
     }
     
     func didPerformLayout() {
-        scroll.contentSize = CGSize(width: stack.frame.maxY, height: scroll.bounds.height)
+        scroll.contentSize = CGSize(width: scroll.bounds.width, height: stack.frame.maxY)
     }
     override func sizeThatFits(_ size: CGSize) -> CGSize {
         autoSizeThatFits(size, layoutClosure: performLayout)
         
-    }
-}
-
-class UIStackPinView: UIView{
-    
-    var subViews:[View] = []
-    var axis:NSLayoutConstraint.Axis = .vertical
-    
-    func addArrangedSubview(_ view:View)  {
-        subViews.append(view)
-        setNeedsLayout()
-        layoutIfNeeded()
-        pin.all().height(subviews.map{$0.frame.height}.reduce(0, +))
-    }
-    
-    override func layoutSubviews() {
-        subViews.forEach { UIView in
-            addSubview(UIView)
-        }
-        if subViews.count > 1 {
-            for (index, view) in subViews.enumerated() {
-                if index != 0 {
-                    if axis == .vertical {
-                        view.pin.below(of: subViews[index-1])
-                    } else{
-                        view.pin.right(of: subViews[index-1])
-                    }
-                }
-            }
-        }
     }
 }

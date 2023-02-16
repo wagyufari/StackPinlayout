@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://cdn.tiny.cloud/1/7m6ukjbt9goy5am5802w2ga46a1vz7f83ppwgmxt2x4rxg6u/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <textarea>
+     
+  </textarea>
+  <script>
+    tinymce.init({
+      selector: 'textarea',  // change this value according to your HTML
+      plugins: 'anchor autolink charmap codesample lists fullscreen textpattern',
+      toolbar: 'undo redo | blocks | bold italic underline strikethrough | checklist numlist bullist indent outdent',
+      branding: false,
+      tinycomments_mode: 'embedded',
+      fullscreen_new_window: true,
+      fullscreen_default_content: true,
+      tinycomments_author: 'Author name',
+      toolbar_location: 'bottom',
+      toolbar_mode: 'floating',
+      menubar: false,
+      statusbar: false,
+      setup: function(editor) {
+      editor.on('init', function(e) {
+        editor.execCommand('mceFullScreen');
+      });
+    },
+      mergetags_list: [
+        { value: 'First.Name', title: 'First Name' },
+        { value: 'Email', title: 'Email' },
+      ],
+    });
+    tinymce.activeEditor.execCommand('mceFullScreen');
+
+  </script>
+</body>
+</html>

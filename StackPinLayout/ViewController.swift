@@ -7,33 +7,64 @@
 
 import UIKit
 import PinLayout
+import RichEditorView
+import WebKit
 
-class ViewController: UIViewController{
+
+class ViewController: UIViewController, WKScriptMessageHandler {
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        if message.name == "EditorMessage" {
+            if let messageBody = message.body as? String {
+
+                print("Received message from JavaScript: \(messageBody)")
+            }
+        }
+    }
     
-    let parentView = ViewControllerView()
+    
+    var parentView: ViewControllerView?
+    let userController = WKUserContentController()
     
     override func viewDidLoad() {
+        let config = WKWebViewConfiguration()
+        config.userContentController = userController
+        parentView = ViewControllerView(configuration: config)
+        guard let parentView = parentView else { return }
         view = parentView
-        view.backgroundColor = .white
         
-        parentView.stack.isManualWrap = true
-        for i in 0...5 {
-            parentView.stack.addArrangedSubview(UIView().apply{
-                $0.pin.height(200)
-                $0.pin.width(200)
-                $0.backgroundColor = .blue
-            })
-            parentView.stack.addArrangedSubview(UIView().apply{
-                $0.pin.height(200)
-                $0.pin.width(200)
-                $0.backgroundColor = .green
-            })
+        userController.add(self, name: "EditorMessage")
+        
+        let url = URL(string: "http://192.168.18.6:8000/")!
+
+        parentView.webView.load(URLRequest(url: url))
+        parentView.webView.allowsBackForwardNavigationGestures = false
+        parentView.button.onTap { UITapGestureRecognizer in
+            
         }
-        parentView.scroll.backgroundColor = .red
-        
-        parentView.setNeedsLayout()
-        parentView.layoutIfNeeded()
     }
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+        
+    }
+    
+}
+
+extension String {
+    var htmlDecoded: String {
+            guard let data = self.data(using: .utf8) else {
+                return self
+            }
+            let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
+                .documentType: NSAttributedString.DocumentType.html,
+                .characterEncoding: String.Encoding.utf8.rawValue
+            ]
+            do {
+                let attributedString = try NSAttributedString(data: data, options: options, documentAttributes: nil)
+                return attributedString.string
+            } catch {
+                return self
+            }
+        }
 }
 
 class ViewControllerView:UIView{
@@ -42,54 +73,40 @@ class ViewControllerView:UIView{
         fatalError("init(coder:) has not been implemented")
     }
     
-    let stack:UIStackPinView={
-        return UIStackPinView()
-    }()
+    let webView: WKWebView
+    let button = UIView()
     
-    var scroll:UIScrollView = {
-       return UIScrollView()
-    }()
-    
-    var isSetHeightWithMaxHeight = false
-    
-    init() {
+    init(configuration: WKWebViewConfiguration) {
+        webView = WKWebView(frame: .zero, configuration: configuration)
         super.init(frame: .zero)
-        addSubview(scroll)
-        scroll.addSubview(stack)
+        addSubview(webView)
+        addSubview(button)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         performLayout()
-        didPerformLayout()
+        button.backgroundColor = .violet600
+        button.layer.cornerRadius = 64/2
     }
     
     func performLayout() {
-        scroll.pin.top().horizontally()
-        
-        if isSetHeightWithMaxHeight {
-            scroll.pin.height(320)
-        }
-        
-        stack.axis = .vertical
-        
-        stack.pin.top().horizontally().wrapContent(.vertically)
-        
-        if !isSetHeightWithMaxHeight {
-            scroll.pin.wrapContent(.vertically)
-            if stack.frame.maxY > 320 {
-                isSetHeightWithMaxHeight = true
-                setNeedsLayout()
-                layoutIfNeeded()
-            }
-        }
+        webView.pin.all()
+        button.pin.top(pin.safeArea).marginRight(16).height(64).width(64).right()
     }
     
-    func didPerformLayout() {
-        scroll.contentSize = CGSize(width: scroll.bounds.width, height: stack.frame.maxY)
-    }
-    override func sizeThatFits(_ size: CGSize) -> CGSize {
-        autoSizeThatFits(size, layoutClosure: performLayout)
-        
+}
+
+extension StringProtocol {
+    func ranges<S: StringProtocol>(of string: S, options: String.CompareOptions = []) -> [Range<Index>] {
+        var result: [Range<Index>] = []
+        var startIndex = self.startIndex
+        while startIndex < endIndex,
+            let range = self[startIndex...].range(of: string, options: options) {
+                result.append(range)
+                startIndex = range.lowerBound < range.upperBound ? range.upperBound :
+                    index(range.lowerBound, offsetBy: 1, limitedBy: endIndex) ?? endIndex
+        }
+        return result
     }
 }

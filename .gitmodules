@@ -1,0 +1,6 @@
+[submodule "CocoaMarkdown"]
+	path = CocoaMarkdown
+	url = https://github.com/indragiek/CocoaMarkdown.git
+[submodule "proton"]
+	path = proton
+	url = https://github.com/rajdeep/proton.git

@@ -10,11 +10,11 @@ import UIKit
 
 class UIStackPinView: UIView{
     
-    var subViews:[UIView] = []
-    var axis:NSLayoutConstraint.Axis = .vertical
+    var subViews: [UIView] = []
+    var axis: NSLayoutConstraint.Axis = .vertical
     var padding: CGFloat = 0
     var spacing: CGFloat = 0
-    var maxLength:Int = 999
+    var maxLength: Int = 999
     var isManualWrap = false
     var isCenterChild = false
     var firstItemSpacing: CGFloat = 0
@@ -44,11 +44,10 @@ class UIStackPinView: UIView{
     }
     
     func removeArrangedSubviews(){
-//        subViews = []
-//        removeSubViews()
-//        setNeedsLayout()
-//        layoutIfNeeded()
-//        pin.horizontally(padding).top(padding).bottom().height(0)
+        subViews = []
+        setNeedsLayout()
+        layoutIfNeeded()
+        pin.horizontally(padding).top(padding).bottom().height(0)
     }
     
     override func layoutSubviews() {
@@ -58,30 +57,6 @@ class UIStackPinView: UIView{
                     view.pin.width(bounds.width)
                 } else{
                     view.pin.height(bounds.height)
-                }
-            } else{
-                if axis == .vertical{
-                    switch horizontalAlignment {
-                    case .CenterHorizontally:
-                        view.pin.hCenter()
-                    case .Start:
-                        view.pin.left()
-                    case .End:
-                        view.pin.right()
-                    default:
-                        print("Nothing")
-                    }
-                } else{
-                    switch verticalAlignment {
-                    case .CenterVertically:
-                        view.pin.vCenter()
-                    case .Bottom:
-                        view.pin.bottom()
-                    case .Top:
-                        view.pin.top()
-                    default:
-                        print("Nothing")
-                    }
                 }
             }
             addSubview(view)
@@ -95,11 +70,53 @@ class UIStackPinView: UIView{
                     } else{
                         view.pin.right(of: subViews[index-1]).marginLeft(spacing)
                     }
+                } else {
+                    if axis == .vertical {
+                        view.pin.top().marginTop(firstItemSpacing)
+                    } else {
+                        view.pin.left().marginLeft(firstItemSpacing)
+                    }
+                }
+            }
+        } else{
+            if axis == .vertical {
+                subViews.first?.pin.top().marginTop(firstItemSpacing)
+            } else {
+                subViews.first?.pin.left().marginLeft(firstItemSpacing)
+            }
+        }
+    }
+    
+    func performAlignment() {
+        subViews.forEach { view in
+            if axis == .vertical{
+                switch horizontalAlignment {
+                case .CenterHorizontally:
+                    view.pin.hCenter()
+                case .Start:
+                    view.pin.left()
+                case .End:
+                    view.pin.right()
+                default:
+                    print("Nothing")
+                }
+            } else{
+                switch verticalAlignment {
+                case .CenterVertically:
+                    view.pin.vCenter()
+                case .Bottom:
+                    view.pin.bottom()
+                case .Top:
+                    view.pin.top()
+                default:
+                    print("Nothing")
                 }
             }
         }
     }
+    
 }
+
 
 enum StackPinAlignment{
     case CenterVertically

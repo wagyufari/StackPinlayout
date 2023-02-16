@@ -1,16 +1,33 @@
 PODS:
+  - Down (0.11.0)
+  - MarkdownView (1.9.1)
   - PinLayout (1.10.0)
+  - RichEditorView (5.0.0)
+  - Typist (1.4.2)
 
 DEPENDENCIES:
+  - Down
+  - MarkdownView (~> 1.9.1)
   - PinLayout
+  - RichEditorView
+  - Typist
 
 SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Down
+    - MarkdownView
+    - RichEditorView
+    - Typist
   trunk:
     - PinLayout
 
 SPEC CHECKSUMS:
+  Down: b6ba1bc985c9d2f4e15e3b293d2207766fa12612
+  MarkdownView: 22249778219cc22901f1454e8355298dd0bda7f0
   PinLayout: e50e9a748b632905fca6e67043ea4b05d6c92186
+  RichEditorView: 1bbb07b87ca2d479ac29a6877014b38b8df233ef
+  Typist: 06465ab9867782aa6c81e38f073dfc01dab73deb
 
-PODFILE CHECKSUM: f7310a83a20d16735cf6c10c85f69db386352818
+PODFILE CHECKSUM: 2d50bab20984a87efdbe38b1153fb64714b258f0
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.3
